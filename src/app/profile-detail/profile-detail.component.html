@@ -1,0 +1,31 @@
+<div class="body" *ngIf="job">
+  <app-user-profile></app-user-profile>
+  <div class="profile-cont">
+    <div class="left-part">
+      <div class="section">
+        <label>Name:
+        </label>
+        <input [(ngModel)]="job.name" placeholder="name"/>
+      </div>
+      <div class="section">
+        <label>Last Name:
+        </label>
+        <input [(ngModel)]="job.last_name" placeholder="lastname"/>
+      </div>
+      <div class="section">
+        <label>Email:</label>
+        <input [(ngModel)]="job.email" placeholder="email"/>
+      </div>
+      <button class="button1" (click)="save()">
+        Save
+      </button>
+    </div>
+    <div class="left-part">
+      <img src={{job.image}} alt="photo">
+    </div>
+    <div>
+      <button class="button1 button2" (click)="logOut()" routerLink="/main">Logout</button>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<body>
+<form>
+
+  <div class="segment">
+    <h1>Create your account</h1>
+  </div>
+
+
+  <label>
+    <input type="text" placeholder="Username"/>
+  </label>
+
+  <label>
+    <input type="text" placeholder="Email address"/>
+  </label>
+
+  <label>
+    <input type="password" placeholder="Password"/>
+  </label>
+
+  <button [routerLink]="['/main']" type="button" (click)="logIn()"><i class="fas fa-lock"></i> Sign up</button>
+
+  <button [routerLink]="['/login']" class="new" type="button">Have an account?</button>
+
+</form>
+
+</body>

@@ -1,0 +1,60 @@
+<div class="body">
+  <app-user-profile></app-user-profile>
+  <div class="recipe-form">
+    <div class="colmn">
+      <div class="inp">
+        <label>Title: <br>
+          <input [ngModel]="specialist?.title" type="text">
+        </label>
+      </div>
+      <div class="inp">
+        <label>Description: <br>
+          <input [ngModel]="specialist?.age" type="text">
+        </label>
+      </div>
+      <div class="inp">
+        <label>Category: <br>
+          <select [ngModel]="specialist?.category">
+            <option *ngFor="let c of categories" [ngValue]="c">{{c.name}}</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <label>Photo: <br>
+          <div class="file">
+            <input type="file" accept="image/png, image/jpeg" class="hide_file">
+          </div>
+        </label>
+      </div>
+    </div>
+    <div class="colmn">
+      <div class="inp">
+        <label>Gender: <br>
+          <textarea [ngModel]="specialist?.gender" name="ingredients" cols="30" rows="10"></textarea>
+        </label>
+      </div>
+    </div>
+    <div class="colmn">
+      <div class="inp">
+        <label>Steps: <br>
+          <textarea [ngModel]="specialist?.city" name="" cols="30" rows="10"></textarea>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="button-new">
+    <button (click)="newSpecialist()">Add specialist</button>
+  </div>
+  <hr>
+  <div class="items">
+    <div *ngFor="let recipe of userSpecialists" class="card" routerLink="/specialist/:{{specialist.id}}/details">
+      <h2>
+        <a [title]="specialist.title + ' details'">
+          {{ specialist.title }}
+        </a>
+      </h2>
+      <img src="{{specialist.front_image}}">
+      <button (click)="delete(specialist)">X</button>
+    </div>
+  </div>
+</div>
